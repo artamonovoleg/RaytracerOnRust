@@ -198,6 +198,14 @@ impl ops::DivAssign<f64> for Vector3 {
     }
 }
 
+impl ops::Neg for Vector3 {
+    type Output = Vector3;
+
+    fn neg(self) -> Self::Output {
+        Vector3::new(-self.e[0], -self.e[1], -self.e[2])
+    }
+}
+
 #[allow(dead_code)]
 pub fn dot(u: Vector3, v: Vector3) -> f64 {
     u.e[0] * v.e[0] + u.e[1] * v.e[1] + u.e[2] * v.e[2]
